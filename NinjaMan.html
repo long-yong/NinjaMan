@@ -8,6 +8,7 @@
         * {
             margin: 0;
             padding: 0;
+            line-height: 0;
         }
 
         .row {
@@ -47,7 +48,7 @@
             background-size: contain;
             position: absolute;
             left: 40px;
-            top: 45px;
+            top: 40px;
         }
     </style>
 </head>
@@ -62,9 +63,11 @@
         [1, 1, 1, 1, 1],
         [1, 0, 2, 2, 1],
         [1, 2, 1, 2, 1],
+        [1, 2, 1, 2, 1],
         [1, 2, 2, 2, 1],
         [1, 2, 1, 2, 1],
         [1, 2, 2, 2, 1],
+        [1, 2, 1, 2, 1],
         [1, 2, 1, 2, 1],
         [1, 2, 2, 2, 1],
         [1, 1, 1, 1, 1],
@@ -77,9 +80,7 @@
     };
 
     function drawworld() {
-
         output = "";
-
         for (var row = 0; row < world.length; row++) {
             output += "<div class = 'row'></div>"
             for (var x = 0; x < world[row].length; x++) {
@@ -99,8 +100,8 @@
     };
 
     function drawNinjaman() {
-        document.getElementById('ninjaman').style.top = ninjaman.y * (40 + 5) + 'px';
-        document.getElementById('ninjaman').style.left = ninjaman.x * (40) + 'px';
+        document.getElementById('ninjaman').style.top = ninjaman.y * 40 + 'px';
+        document.getElementById('ninjaman').style.left = ninjaman.x * 40 + 'px';
     };
 
     document.onkeydown = function (e) {
@@ -129,9 +130,7 @@
         }
 
         world[ninjaman.y][ninjaman.x] = 0;
-
         drawworld();
-
         drawNinjaman();
     };
 
